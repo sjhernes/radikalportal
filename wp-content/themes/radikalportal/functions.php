@@ -220,8 +220,11 @@ function jetpackme_related_posts_headline( $headline ) {
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
 
 function caption_shortcode( $atts, $content = null ) {
-	return '<span class="caption">' . $content . '</span>';
+	$a = shortcode_atts( array(
+		'tittel' => 'caption',
+	), $atts );
+
+	return '<div class="faktaboks"><h3>' . esc_attr($a['class']) . '</h3>' . do_shortcode($content) . '</div>';
 }
+
 add_shortcode( 'caption', 'caption_shortcode' );
-
-
