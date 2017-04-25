@@ -224,7 +224,7 @@ function caption_shortcode( $atts, $content = null ) {
 		'tittel' => 'caption',
 	), $atts );
 
-	return '<div class="faktaboks"><h3>' . esc_attr($a['class']) . '</h3>' . do_shortcode($content) . '</div>';
+	return '<div class="faktaboks"><h3>' . esc_attr($a['tittel']) . '</h3>' . do_shortcode($content) . '</div>';
 }
 
 add_shortcode( 'caption', 'caption_shortcode' );
