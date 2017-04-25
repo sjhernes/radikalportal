@@ -218,3 +218,10 @@ function jetpackme_related_posts_headline( $headline ) {
     return $headline;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
+
+function caption_shortcode( $atts, $content = null ) {
+	return '<span class="caption">' . $content . '</span>';
+}
+add_shortcode( 'caption', 'caption_shortcode' );
+
+
